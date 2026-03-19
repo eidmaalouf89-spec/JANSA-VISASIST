@@ -1,0 +1,58 @@
+[
+  {
+    "group_type": "category",
+    "group_value": "BLOCKED",
+    "count": 1,
+    "overdue_count": 1,
+    "avg_priority_score": 60.0
+  },
+  {
+    "group_type": "category",
+    "group_value": "EASY_WIN_APPROVE",
+    "count": 1,
+    "overdue_count": 1,
+    "avg_priority_score": 60.0
+  },
+  {
+    "group_type": "category",
+    "group_value": "NOT_STARTED",
+    "count": 1,
+    "overdue_count": 0,
+    "avg_priority_score": 0.0
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I001",
+    "count": 3,
+    "overdue_count": 2,
+    "avg_priority_score": 40.0
+  },
+  {
+    "group_type": "sheet",
+    "group_value": "LOT I01-VDSTP",
+    "count": 3,
+    "overdue_count": 2,
+    "avg_priority_score": 40.0
+  },
+  {
+    "group_type": "category_x_lot",
+    "group_value": "BLOCKED|I001",
+    "count": 1,
+    "overdue_count": 1,
+    "avg_priority_score": 60.0
+  },
+  {
+    "group_type": "category_x_lot",
+    "group_value": "EASY_WIN_APPROVE|I001",
+    "count": 1,
+    "overdue_count": 1,
+    "avg_priority_score": 60.0
+  },
+  {
+    "group_type": "category_x_lot",
+    "group_value": "NOT_STARTED|I001",
+    "count": 1,
+    "overdue_count": 0,
+    "avg_priority_score": 0.0
+  }
+]

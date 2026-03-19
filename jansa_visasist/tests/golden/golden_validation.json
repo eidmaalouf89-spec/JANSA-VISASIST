@@ -1,18 +1,1 @@
-{
-  "row_count": {
-    "passed": true,
-    "details": "Expected 4108 rows, got 4108"
-  },
-  "schema_completeness": {
-    "passed": true,
-    "details": "All columns present"
-  },
-  "no_orphaned_rows": {
-    "passed": true,
-    "details": "All rows have traceability fields"
-  },
-  "date_sanity": {
-    "passed": true,
-    "details": "All dates within sane range"
-  }
-}
+{}

@@ -1,0 +1,23 @@
+[
+  {
+    "row_id": "0_10",
+    "doc_family_key": "P17T2INEXEVDPTERI001CPETZFD026001",
+    "source_sheet": "LOT I01-VDSTP",
+    "exclusion_reason": "NOT_LATEST",
+    "visa_global": "REF"
+  },
+  {
+    "row_id": "0_11",
+    "doc_family_key": "P17T2INEXEVDPTERI001CPETZFD026001",
+    "source_sheet": "LOT I01-VDSTP",
+    "exclusion_reason": "NOT_LATEST",
+    "visa_global": "REF"
+  },
+  {
+    "row_id": "0_25",
+    "doc_family_key": "P17T2INEXEVDPTERI001MTDTZFD026015",
+    "source_sheet": "LOT I01-VDSTP",
+    "exclusion_reason": "VISA_HM",
+    "visa_global": "HM"
+  }
+]

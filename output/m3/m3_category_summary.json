@@ -1,0 +1,27 @@
+[
+  {
+    "group_type": "category",
+    "group_value": "EASY_WIN_APPROVE",
+    "count": 1
+  },
+  {
+    "group_type": "category",
+    "group_value": "BLOCKED",
+    "count": 1
+  },
+  {
+    "group_type": "category",
+    "group_value": "NOT_STARTED",
+    "count": 1
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I001",
+    "count": 3
+  },
+  {
+    "group_type": "sheet",
+    "group_value": "LOT I01-VDSTP",
+    "count": 3
+  }
+]
