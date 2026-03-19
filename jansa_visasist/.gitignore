@@ -22,4 +22,11 @@ output/
 .DS_Store
 Thumbs.db
 
+output/
+source/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+output/
 source/
