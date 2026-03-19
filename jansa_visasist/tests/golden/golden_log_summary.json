@@ -1,0 +1,20 @@
+{
+  "total_entries": 161,
+  "severity_counts": {
+    "ERROR": 33,
+    "INFO": 10,
+    "WARNING": 118
+  },
+  "category_counts": {
+    "ambiguous_status": 2,
+    "corrupted_date": 33,
+    "date_out_of_range": 8,
+    "missing_p_prefix": 2,
+    "multi_value_status": 7,
+    "trailing_punctuation": 1,
+    "unknown_approver": 25,
+    "unknown_status": 29,
+    "unmapped_column": 53,
+    "unparseable_document": 1
+  }
+}
