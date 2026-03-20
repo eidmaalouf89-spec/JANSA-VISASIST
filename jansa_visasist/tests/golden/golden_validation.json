@@ -1,1 +1,23 @@
-{}
+{
+    "checks": {
+        "total_rows_positive": {
+            "passed": true,
+            "details": "total_rows=4108"
+        },
+        "no_null_document": {
+            "passed": true,
+            "details": "0 null document values"
+        },
+        "no_duplicate_row_id": {
+            "passed": true,
+            "details": "0 duplicate row_id values"
+        },
+        "date_sanity": {
+            "passed": false,
+            "details": "some dates outside sanity range [2020-01-01, 2030-12-31]"
+        }
+    },
+    "total_checks": 4,
+    "passed_checks": 3,
+    "failed_checks": 1
+}

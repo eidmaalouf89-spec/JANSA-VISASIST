@@ -1,1 +1,14 @@
-{}
+{
+    "total_entries": 159,
+    "severity_distribution": {
+        "ERROR": 159,
+        "WARNING": 0,
+        "INFO": 0
+    },
+    "category_distribution": {
+        "VALIDATION_FAILURE": 159
+    },
+    "top_categories": [
+        "VALIDATION_FAILURE"
+    ]
+}

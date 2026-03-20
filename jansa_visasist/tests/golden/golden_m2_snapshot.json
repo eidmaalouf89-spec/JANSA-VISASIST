@@ -1,0 +1,29 @@
+{
+    "total_rows": 4108,
+    "duplicate_flag_distribution": {
+        "UNIQUE": 3847,
+        "DUPLICATE": 142,
+        "SUSPECT": 119
+    },
+    "cross_lot_count": 0,
+    "anomaly_count": 87,
+    "anomaly_type_distribution": {
+        "REVISION_GAP": 34,
+        "LATE_FIRST_APPEARANCE": 41,
+        "DATE_REGRESSION": 12
+    },
+    "family_count_gte": 1500,
+    "is_latest_true_count_gte": 2000,
+    "unparseable_count_lte": 50,
+    "columns_added": [
+        "doc_family_key",
+        "ind_sort_order",
+        "doc_version_key",
+        "previous_version_key",
+        "is_latest",
+        "revision_count",
+        "duplicate_flag",
+        "is_cross_lot",
+        "cross_lot_sheets"
+    ]
+}
