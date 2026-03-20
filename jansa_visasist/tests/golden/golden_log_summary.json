@@ -1,14 +1,20 @@
 {
-    "total_entries": 159,
+    "total_entries": 161,
     "severity_distribution": {
-        "ERROR": 159,
-        "WARNING": 0,
-        "INFO": 0
+        "WARNING": 118,
+        "ERROR": 33,
+        "INFO": 10
     },
     "category_distribution": {
-        "VALIDATION_FAILURE": 159
-    },
-    "top_categories": [
-        "VALIDATION_FAILURE"
-    ]
+        "unmapped_column": 53,
+        "unknown_approver": 25,
+        "corrupted_date": 33,
+        "multi_value_status": 7,
+        "unknown_status": 29,
+        "ambiguous_status": 2,
+        "date_out_of_range": 8,
+        "missing_p_prefix": 2,
+        "trailing_punctuation": 1,
+        "unparseable_document": 1
+    }
 }

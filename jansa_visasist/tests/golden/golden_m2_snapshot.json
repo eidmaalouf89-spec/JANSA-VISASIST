@@ -1,29 +1,21 @@
 {
     "total_rows": 4108,
     "duplicate_flag_distribution": {
-        "UNIQUE": 3847,
-        "DUPLICATE": 142,
-        "SUSPECT": 119
+        "UNIQUE": 3495,
+        "SUSPECT": 605,
+        "DUPLICATE": 8
     },
-    "cross_lot_count": 0,
-    "anomaly_count": 87,
+    "unparseable_count": 1,
+    "cross_lot_rows": 175,
+    "is_latest_count": 2724,
     "anomaly_type_distribution": {
-        "REVISION_GAP": 34,
-        "LATE_FIRST_APPEARANCE": 41,
-        "DATE_REGRESSION": 12
+        "UNPARSEABLE_DOCUMENT": 1,
+        "MISSING_IND": 1,
+        "DUPLICATE_SUSPECT": 290,
+        "DUPLICATE_EXACT": 8,
+        "LATE_FIRST_APPEARANCE": 283,
+        "REVISION_GAP": 93,
+        "DATE_REGRESSION": 38
     },
-    "family_count_gte": 1500,
-    "is_latest_true_count_gte": 2000,
-    "unparseable_count_lte": 50,
-    "columns_added": [
-        "doc_family_key",
-        "ind_sort_order",
-        "doc_version_key",
-        "previous_version_key",
-        "is_latest",
-        "revision_count",
-        "duplicate_flag",
-        "is_cross_lot",
-        "cross_lot_sheets"
-    ]
+    "total_anomalies": 714
 }

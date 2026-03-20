@@ -1,16 +1,3 @@
 {
-    "queue_size": 940,
-    "exclusion_count": 3168,
-    "category_distribution": {
-        "OVERDUE_CRITICAL": 45,
-        "OVERDUE_STANDARD": 120,
-        "PENDING_FRESH": 410,
-        "PENDING_STALE": 180,
-        "NO_DATE": 185
-    },
-    "score_min_gte": 0,
-    "score_max_lte": 100,
-    "all_is_latest_true": true,
-    "no_duplicate_in_queue": true,
-    "all_visa_global_null": true
+    "_note": "M3 output is date-dependent. E2E tests validate structural invariants, not exact counts. This file is not used by tests."
 }

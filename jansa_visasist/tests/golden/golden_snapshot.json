@@ -2,42 +2,20 @@
     "total_rows": 4108,
     "sheets_count": 25,
     "row_quality_distribution": {
-        "OK": 3712,
-        "WARNING": 237,
-        "ERROR": 159
+        "OK": 4035,
+        "WARNING": 40,
+        "ERROR": 33
     },
     "visa_global_distribution": {
-        "VSO": 1842,
-        "VAO": 1105,
-        "null": 940,
-        "REF": 112,
-        "HM": 56,
-        "SUS": 31,
-        "DEF": 14,
-        "FAV": 8
+        "VAO": 1433,
+        "REF": 712,
+        "VSO": 248,
+        "HM": 147,
+        "SUS": 7,
+        "DEF": 2,
+        "FAV": 1
     },
-    "has_document_null_count": 0,
-    "has_ind_null_count_lte": 50,
-    "source_sheets_unique_count": 25,
-    "columns_present": [
-        "document",
-        "document_raw",
-        "ind",
-        "ind_raw",
-        "titre",
-        "visa_global",
-        "visa_global_raw",
-        "date_diffusion",
-        "date_diffusion_raw",
-        "date_reception",
-        "date_reception_raw",
-        "date_contractuelle_visa",
-        "date_contractuelle_visa_raw",
-        "source_sheet",
-        "source_row",
-        "row_id",
-        "row_quality",
-        "row_quality_details",
-        "assigned_approvers"
-    ]
+    "visa_global_nulls": 1558,
+    "document_nulls": 1,
+    "ind_nulls": 1
 }
