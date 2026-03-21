@@ -81,7 +81,7 @@ export const anomalyLogs: AnomalyLog[] = [
   },
   {
     log_id: 8,
-    sheet: null,
+    sheet: '_GLOBAL',
     row: 0,
     column: null,
     severity: 'ERROR',
