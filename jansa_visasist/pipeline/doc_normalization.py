@@ -28,10 +28,10 @@ def normalize_document(
             sheet=sheet_name,
             row=source_row,
             column="document",
-            severity=Severity.ERROR.value,
+            severity=Severity.INFO.value,
             category="missing_field",
             raw_value=None,
-            action_taken="Document reference is null — set to null",
+            action_taken="Document reference is null — skipped (decoration row or empty cell)",
         ))
         return None
 
