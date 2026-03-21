@@ -1,0 +1,66 @@
+:root {
+  --color-success:     #22C55E;
+  --color-danger:      #EF4444;
+  --color-warning:     #F59E0B;
+  --color-info:        #3B82F6;
+  --color-accent:      #4F7AF8;
+  --color-arbitration: #A855F7;
+  --color-neutral:     #525C72;
+
+  --bg-primary:        #0C0D10;
+  --bg-secondary:      #12141A;
+  --bg-tertiary:       #181B23;
+
+  --border-default:    #252B3B;
+
+  --text-primary:      #DDE1F0;
+  --text-secondary:    #8690A8;
+  --text-tertiary:     #525C72;
+
+  --font-base:         system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:         monospace;
+  --font-size-base:    13px;
+  --line-height-base:  1.4;
+
+  --radius-card:       10px;
+  --radius-badge:      4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
