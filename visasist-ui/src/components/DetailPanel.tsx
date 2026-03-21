@@ -115,14 +115,15 @@ function ApproversTab({ item, t }: { item: QueueItem; t: (k: TranslationKey) => 
   const blockingSet = new Set(item.blocking_approvers);
   const missingSet = new Set(item.missing_approvers);
 
-  // Responded estimate: we only know missing/blocking from QueueItem
-  // (full Approver objects are in Document type used by Workspace P3)
+  // Responded estimate: blocking approvers have responded (with REF),
+  // missing approvers have not responded yet
+  const respondedCount = item.blocking_approvers.length;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       {/* Summary counts */}
       <div style={{ display: 'flex', gap: 12 }}>
-        <SummaryCount label={t('detail_responded')} count={0} color="var(--color-success)" />
+        <SummaryCount label={t('detail_responded')} count={respondedCount} color="var(--color-success)" />
         <SummaryCount label={t('detail_blocking')} count={item.blocking_approvers.length} color="var(--color-danger)" />
         <SummaryCount label={t('detail_missing')} count={item.missing_approvers.length} color="var(--color-warning)" />
       </div>

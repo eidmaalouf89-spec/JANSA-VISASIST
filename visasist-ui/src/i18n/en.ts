@@ -132,6 +132,9 @@ const en = {
   filter_lot_search_placeholder: 'Search lots\u2026',
   filter_score_band: 'Score band',
   filter_approver: 'Approver',
+  filter_overdue_only: 'Overdue only',
+  filter_pending_only: 'Pending only',
+  filter_latest_revision: 'Latest revision',
   filter_reset: 'Reset',
   filter_active_count: '{n} active',
 

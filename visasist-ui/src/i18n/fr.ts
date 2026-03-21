@@ -132,6 +132,9 @@ const fr = {
   filter_lot_search_placeholder: 'Rechercher des lots\u2026',
   filter_score_band: 'Bande de score',
   filter_approver: 'Approbateur',
+  filter_overdue_only: 'En retard uniquement',
+  filter_pending_only: 'En attente uniquement',
+  filter_latest_revision: 'Derni\u00e8re r\u00e9vision',
   filter_reset: 'R\u00e9initialiser',
   filter_active_count: '{n} actif(s)',
 

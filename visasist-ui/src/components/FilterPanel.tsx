@@ -245,21 +245,21 @@ export default function FilterPanel({
         <div style={sectionStyle}>
           <div style={sectionLabelStyle}>{t('filter_quick')}</div>
           <div style={toggleRowStyle}>
-            <span style={toggleLabelStyle}>Overdue only</span>
+            <span style={toggleLabelStyle}>{t('filter_overdue_only')}</span>
             <ToggleSwitch
               checked={filters.overdueOnly}
               onChange={(v) => onChange({ ...filters, overdueOnly: v })}
             />
           </div>
           <div style={toggleRowStyle}>
-            <span style={toggleLabelStyle}>Pending only</span>
+            <span style={toggleLabelStyle}>{t('filter_pending_only')}</span>
             <ToggleSwitch
               checked={filters.pendingOnly}
               onChange={(v) => onChange({ ...filters, pendingOnly: v })}
             />
           </div>
           <div style={toggleRowStyle}>
-            <span style={toggleLabelStyle}>Latest revision</span>
+            <span style={toggleLabelStyle}>{t('filter_latest_revision')}</span>
             <ToggleSwitch
               checked={filters.latestRevision}
               onChange={(v) => onChange({ ...filters, latestRevision: v })}
