@@ -2,6 +2,7 @@ import type { Revision } from '../types';
 
 export const revisions: Revision[] = [
   {
+    doc_family_key: '14_84',
     doc_version_key: '14_84::null::LOT 42-PLB-UTB',
     ind: null,
     ind_sort_order: 0,
@@ -24,6 +25,7 @@ export const revisions: Revision[] = [
     ],
   },
   {
+    doc_family_key: '14_84',
     doc_version_key: '14_84::A::LOT 42-PLB-UTB',
     ind: 'A',
     ind_sort_order: 1,
@@ -51,6 +53,7 @@ export const revisions: Revision[] = [
     ],
   },
   {
+    doc_family_key: '14_84',
     doc_version_key: '14_84::A::LOT 42-PLB-UTB',
     ind: 'A',
     ind_sort_order: 1,

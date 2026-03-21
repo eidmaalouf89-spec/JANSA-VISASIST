@@ -124,6 +124,43 @@ const fr = {
   common_import: 'Importer',
   common_notifications: 'Notifications',
   common_search: 'Recherche',
+
+  // Queue P2 — Filters
+  filter_quick: 'Rapide',
+  filter_category: 'Cat\u00e9gorie',
+  filter_lot: 'Lot',
+  filter_lot_search_placeholder: 'Rechercher des lots\u2026',
+  filter_score_band: 'Bande de score',
+  filter_approver: 'Approbateur',
+  filter_reset: 'R\u00e9initialiser',
+  filter_active_count: '{n} actif(s)',
+
+  // Queue P2 — Bulk actions
+  bulk_selected: 's\u00e9lectionn\u00e9(s)',
+  bulk_issue: '\u00c9mettre VISA',
+  bulk_chase: 'Relancer approbateurs',
+  bulk_export: 'Exporter CSV',
+  bulk_flag: 'Signaler',
+  bulk_clear: 'Effacer',
+
+  // Queue P2 — Column headers
+  col_document: 'Document',
+  col_lot: 'Lot',
+  col_category: 'Cat\u00e9gorie',
+  col_score: 'Score',
+  col_deadline: '\u00c9ch\u00e9ance',
+  col_overdue: 'Retard',
+  col_consensus: 'Consensus',
+  col_missing: 'Manquants',
+  col_rev: 'R\u00e9v.',
+  col_action: 'Action',
+
+  // Queue P2 — Detail panel
+  why_rank_label: 'Pourquoi ce rang',
+  detail_responded: 'R\u00e9pondu',
+  detail_blocking: 'Bloquant',
+  detail_missing: 'Manquant',
+  open_workspace: 'Ouvrir l\'espace document',
 } as const;
 
 export type TranslationKey = keyof typeof fr;

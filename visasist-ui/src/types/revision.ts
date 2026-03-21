@@ -5,6 +5,7 @@ export interface RevisionApproverSummary {
 }
 
 export interface Revision {
+  doc_family_key: string;
   doc_version_key: string;
   ind: string | null;
   ind_sort_order: number;

@@ -124,6 +124,43 @@ const en = {
   common_import: 'Import',
   common_notifications: 'Notifications',
   common_search: 'Search',
+
+  // Queue P2 — Filters
+  filter_quick: 'Quick',
+  filter_category: 'Category',
+  filter_lot: 'Lot',
+  filter_lot_search_placeholder: 'Search lots\u2026',
+  filter_score_band: 'Score band',
+  filter_approver: 'Approver',
+  filter_reset: 'Reset',
+  filter_active_count: '{n} active',
+
+  // Queue P2 — Bulk actions
+  bulk_selected: 'selected',
+  bulk_issue: 'Issue VISA',
+  bulk_chase: 'Chase approvers',
+  bulk_export: 'Export CSV',
+  bulk_flag: 'Flag',
+  bulk_clear: 'Clear',
+
+  // Queue P2 — Column headers
+  col_document: 'Document',
+  col_lot: 'Lot',
+  col_category: 'Category',
+  col_score: 'Score',
+  col_deadline: 'Deadline',
+  col_overdue: 'Overdue',
+  col_consensus: 'Consensus',
+  col_missing: 'Missing',
+  col_rev: 'Rev',
+  col_action: 'Action',
+
+  // Queue P2 — Detail panel
+  why_rank_label: 'Why this rank',
+  detail_responded: 'Responded',
+  detail_blocking: 'Blocking',
+  detail_missing: 'Missing',
+  open_workspace: 'Open workspace',
 } as const;
 
 export type TranslationKey = keyof typeof en;
