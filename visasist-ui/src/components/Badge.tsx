@@ -67,6 +67,11 @@ function getLifecycleColor(lc: LifecycleState): string {
     case 'ON_HOLD': return 'var(--color-warning)';
     case 'NOT_STARTED': return 'var(--color-neutral)';
     case 'EXCLUDED': return 'var(--color-neutral)';
+    case 'CONFLICT': return 'var(--color-arbitration)';
+    case 'SAS_BLOCKED': return 'var(--color-danger)';
+    case 'SAS_PENDING': return 'var(--color-warning)';
+    case 'SYNTHESIS_ISSUED': return 'var(--color-neutral)';
+    case 'BLOCKED': return 'var(--color-danger)';
   }
 }
 

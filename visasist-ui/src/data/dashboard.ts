@@ -1,7 +1,7 @@
 import type { DashboardSummary } from '../mock/dashboard-summary';
 import type { QueueItem, AnomalyLog, AISuggestion } from '../types';
 import type { PipelineRunHistoryPoint } from '../mock/pipeline-runs-history';
-import { DATA_MODE, IntegrationError } from './config';
+import { DATA_MODE, IntegrationError, apiFetch } from './config';
 import { getQueueItems } from './queue';
 import { adaptM3SummaryToDashboard } from './adapters/dashboard-adapter';
 
@@ -34,24 +34,45 @@ export async function getDashboardData(): Promise<DashboardData> {
     return getMockDashboard();
   }
 
-  // ── Hybrid/Strict mode — fetch real data ──────────────────────────
+  // ── Hybrid/Strict/API mode — fetch real data ─────────────────────
   try {
-    const [categorySummaryRes, pipelineReportRes, queueItems] = await Promise.all([
-      fetch('/output/m3/m3_category_summary.json'),
-      fetch('/output/m3/m3_pipeline_report.json'),
-      getQueueItems(),
-    ]);
+    let categorySummary: unknown;
+    let pipelineReport: unknown;
+    let queueItems: QueueItem[];
 
-    if (!categorySummaryRes.ok || !pipelineReportRes.ok) {
-      throw new Error(
-        `HTTP error: category=${categorySummaryRes.status}, pipeline=${pipelineReportRes.status}`,
-      );
+    if (DATA_MODE === 'api') {
+      // API mode: fetch from Flask API (single composite endpoint)
+      const [dashRes, qItems] = await Promise.all([
+        apiFetch<{ category_summary: unknown; pipeline_report: unknown }>('/api/dashboard/summary'),
+        getQueueItems(),
+      ]);
+      categorySummary = dashRes.category_summary;
+      pipelineReport = dashRes.pipeline_report;
+      queueItems = qItems;
+    } else {
+      // hybrid/strict: fetch static files served by Vite
+      const [categorySummaryRes, pipelineReportRes, qItems] = await Promise.all([
+        fetch('/output/m3/m3_category_summary.json'),
+        fetch('/output/m3/m3_pipeline_report.json'),
+        getQueueItems(),
+      ]);
+
+      if (!categorySummaryRes.ok || !pipelineReportRes.ok) {
+        throw new Error(
+          `HTTP error: category=${categorySummaryRes.status}, pipeline=${pipelineReportRes.status}`,
+        );
+      }
+
+      categorySummary = await categorySummaryRes.json();
+      pipelineReport = await pipelineReportRes.json();
+      queueItems = qItems;
     }
 
-    const categorySummary = await categorySummaryRes.json();
-    const pipelineReport = await pipelineReportRes.json();
-
-    const summary = adaptM3SummaryToDashboard(categorySummary, pipelineReport, queueItems);
+    const summary = adaptM3SummaryToDashboard(
+      categorySummary as { group_type: string; group_value: string; count: number }[],
+      pipelineReport as { reference_date: string; input_rows: number; pending_count: number; overdue_count: number },
+      queueItems,
+    );
 
     // Urgent items: first 5 of already-sorted queue (M3 sorted by priority_score desc)
     const urgentItems = queueItems.slice(0, 5);
@@ -76,7 +97,7 @@ export async function getDashboardData(): Promise<DashboardData> {
       trendHistory: pipelineRunsHistory,
     };
   } catch (err) {
-    if (DATA_MODE === 'hybrid') {
+    if (DATA_MODE === 'hybrid' || DATA_MODE === 'api') {
       console.warn('[VISASIST:schema] dashboard fetch failed, falling back to mock:', err);
       return getMockDashboard();
     }

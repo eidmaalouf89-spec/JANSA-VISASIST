@@ -1,174 +1,101 @@
 import type { Document } from '../types';
-import type { ScoreComponents } from '../types/document';
 
 export const documentDetail: Document = {
-  // Traceability
-  doc_version_key: '14_84::A::LOT 42-PLB-UTB',
-  doc_family_key: '14_84',
-  row_id: 'row_001',
-  source_sheet: 'Sheet1',
-  source_row: 2,
-
-  // Document identity
-  document: 'D001 - Installation électrique',
-  document_raw: 'D001 - Installation electrique',
-  titre: 'Plan électrique général - Version A',
-  lot: 'LOT 42-PLB-UTB',
-  type_doc: 'Technical Drawing',
-  niv: 'Level A',
-  ind: 'A',
-  ind_sort_order: 1,
-
-  // Dates
-  date_diffusion: '2026-03-01T10:00:00Z',
-  date_contractuelle_visa: '2026-03-08T23:59:59Z',
-  days_since_diffusion: 20,
-  days_until_deadline: -5,
-  days_overdue: 5,
-  is_overdue: true,
-
-  // M3 scoring & categorisation
-  priority_score: 95.5,
-  score_band: 'CRITICAL',
-  category: 'EASY_WIN_APPROVE',
-  consensus_type: 'ALL_APPROVE',
-  missing_approvers: [],
-  blocking_approvers: [],
-
-  // M5 suggestion
-  suggested_action: 'ISSUE_VISA',
-
-  // M2 revision info
-  revision_count: 1,
-  is_latest: true,
-  is_cross_lot: false,
-
-  // Quality
-  row_quality: 'OK',
-  duplicate_flag: 'UNIQUE',
-
-  // Extended identity
-  zone: 'Zone A - Électricité générale',
-  n_doc: '14-84-001-A',
-  type_format: 'DWG',
-  ancien: 'D001-v0',
-  n_bdx: 'BX-2026-001',
-  date_reception: '2026-02-28T14:30:00Z',
-  non_recu_papier: null,
-  observations: 'Document bien structuré, conforme aux normes NF C 15-100',
-  visa_global: 'VAO',
-  visa_global_raw: 'VAO - Approuvé',
-
-  // M2 extended
-  lifecycle_state: 'READY_TO_ISSUE',
-  cross_lot_sheets: null,
-  previous_version_key: '14_84::null::LOT 42-PLB-UTB',
-
-  // Full approver list
-  approvers: [
-    {
-      canonical_key: 'approver_elec_01',
-      display_name: 'Jean Dupont (VSO)',
-      is_assigned: true,
-      statut: 'VSO',
-      statut_raw: 'Visa Système Ouvrages',
-      date: '2026-03-02T09:15:00Z',
-      numero_visa: 'VISA-2026-001',
-      is_blocking: false,
-      is_pending: false,
-      is_hm: false,
-    },
-    {
-      canonical_key: 'approver_elec_02',
-      display_name: 'Marie Martin (VAO)',
-      is_assigned: true,
-      statut: 'VAO',
-      statut_raw: 'Visa Activités Opérationnelles',
-      date: '2026-03-03T11:45:00Z',
-      numero_visa: 'VISA-2026-002',
-      is_blocking: false,
-      is_pending: false,
-      is_hm: false,
-    },
-    {
-      canonical_key: 'approver_elec_03',
-      display_name: 'Pierre Bernard (REF)',
-      is_assigned: true,
-      statut: 'REF',
-      statut_raw: 'Référent',
-      date: '2026-03-04T14:20:00Z',
-      numero_visa: 'VISA-2026-003',
-      is_blocking: false,
-      is_pending: false,
-      is_hm: false,
-    },
-    {
-      canonical_key: 'approver_elec_04',
-      display_name: 'Luc Devereaux (HM)',
-      is_assigned: true,
-      statut: 'HM',
-      statut_raw: 'Homme de Métier',
-      date: null,
-      numero_visa: null,
-      is_blocking: false,
-      is_pending: true,
-      is_hm: true,
-    },
-    {
-      canonical_key: 'approver_elec_05',
-      display_name: 'Sophie Laurent (null)',
-      is_assigned: false,
-      statut: null,
-      statut_raw: null,
-      date: null,
-      numero_visa: null,
-      is_blocking: false,
-      is_pending: false,
-      is_hm: false,
-    },
+  "doc_version_key": "P17_T2_GE_EXE_LGD_GOE_I003_NDC_TZ_TX_028000::A::2",
+  "doc_family_key": "P17_T2_GE_EXE_LGD_GOE_I003_NDC_TZ_TX_028000",
+  "row_id": "nm7_60003453",
+  "source_sheet": "I003",
+  "source_row": 60003453,
+  "document": "P17_T2_GE_EXE_LGD_GOE_I003_NDC_TZ_TX_028000",
+  "document_raw": "/17&CO Tranche 2/4-EXE I PK INFRA/1-I-ENTREPRISES/I03-GOE-LEGENDRE/7 Documents d’Exécutions/5 NdC-Schémas-Rapports",
+  "titre": "Hypothèses générales.pdf",
+  "lot": "I003",
+  "type_doc": "NDC",
+  "niv": null,
+  "ind": "A",
+  "ind_sort_order": 1,
+  "date_diffusion": null,
+  "date_contractuelle_visa": null,
+  "days_since_diffusion": null,
+  "days_until_deadline": -818.0,
+  "days_overdue": 818,
+  "is_overdue": true,
+  "priority_score": 192,
+  "score_band": "CRITICAL",
+  "category": "CONFLICT",
+  "consensus_type": "MIXED",
+  "missing_approvers": [],
+  "blocking_approvers": [
+    "0-Bureau de Contrôle"
   ],
-  assigned_approvers: [
-    'approver_elec_01',
-    'approver_elec_02',
-    'approver_elec_03',
-    'approver_elec_04',
+  "suggested_action": "ARBITRATE",
+  "revision_count": 1,
+  "is_latest": true,
+  "is_cross_lot": false,
+  "cross_lot_sheets": null,
+  "row_quality": "OK",
+  "duplicate_flag": "UNIQUE",
+  "zone": null,
+  "n_doc": null,
+  "type_format": null,
+  "ancien": null,
+  "n_bdx": null,
+  "date_reception": null,
+  "non_recu_papier": null,
+  "observations": null,
+  "visa_global": null,
+  "visa_global_raw": null,
+  "lifecycle_state": "CONFLICT",
+  "previous_version_key": null,
+  "approvers": [
+    {
+      "canonical_key": "0_BET_STRUCTURE",
+      "display_name": "0-BET Structure",
+      "is_assigned": true,
+      "statut": "VAO",
+      "statut_raw": "VAO",
+      "date": "2023-12-13T00:00:00",
+      "numero_visa": null,
+      "is_blocking": false,
+      "is_pending": false,
+      "is_hm": false
+    },
+    {
+      "canonical_key": "0_BUREAU_DE_CONTRÔLE",
+      "display_name": "0-Bureau de Contrôle",
+      "is_assigned": true,
+      "statut": "DEF",
+      "statut_raw": "DEF",
+      "date": "2024-02-16T00:00:00",
+      "numero_visa": null,
+      "is_blocking": true,
+      "is_pending": false,
+      "is_hm": false
+    },
+    {
+      "canonical_key": "0_AMO_HQE",
+      "display_name": "0-AMO HQE",
+      "is_assigned": true,
+      "statut": "HM",
+      "statut_raw": "HM",
+      "date": "2025-09-11T00:00:00",
+      "numero_visa": null,
+      "is_blocking": false,
+      "is_pending": false,
+      "is_hm": true
+    }
   ],
-
-  // Score breakdown
-  score_components: {
-    overdue_points: 35.5,
-    deadline_points: 20.0,
-    completeness_points: 25.0,
-    revision_points: 15.0,
-    deadline_penalty: 0,
-  } as ScoreComponents,
-
-  // M5 AI suggestion
-  ai_suggestion: {
-    doc_version_key: '14_84::A::LOT 42-PLB-UTB',
-    pipeline_run_id: 'r42',
-    suggested_action: 'ISSUE_VISA',
-    proposed_visa: 'VAO',
-    confidence: 0.92,
-    ai_available: true,
-    explanation_text:
-      'Tous les approbateurs ont donné leur avis positif (VSO, VAO, REF). Le consensus est unanime (ALL_APPROVE). ' +
-      'Le document est en retard de 5 jours mais peut être signé immédiatement. Recommandation: émettre le visa sans attendre.',
-    explanation_template: 'default_approve',
-    draft_actions: [
-      {
-        type: 'relance',
-        content: null,
-        template: 'visa_approved_notification',
-      },
-      {
-        type: 'synthesis',
-        content:
-          'Visa approuvé suite à consensus positif de tous les approbateurs. Le document respecte les normes en vigueur.',
-        template: 'standard_synthesis',
-      },
-    ],
-    validation_failed: false,
-    guard_reason: null,
+  "assigned_approvers": [
+    "0-BET Structure",
+    "0-Bureau de Contrôle",
+    "0-AMO HQE"
+  ],
+  "score_components": {
+    "overdue_points": 50,
+    "deadline_points": 0,
+    "completeness_points": 0,
+    "revision_points": 5,
+    "deadline_penalty": 0
   },
-};
+  "ai_suggestion": null
+} as Document;

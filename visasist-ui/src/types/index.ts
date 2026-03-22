@@ -12,7 +12,8 @@ export type SuggestedAction =
 export type LifecycleState =
   | 'NOT_STARTED' | 'WAITING_RESPONSES' | 'READY_TO_ISSUE'
   | 'READY_TO_REJECT' | 'NEEDS_ARBITRATION' | 'CHRONIC_BLOCKED'
-  | 'ON_HOLD' | 'EXCLUDED';
+  | 'ON_HOLD' | 'EXCLUDED' | 'CONFLICT' | 'SAS_BLOCKED' | 'SAS_PENDING'
+  | 'SYNTHESIS_ISSUED' | 'BLOCKED';
 
 export type ScoreBand = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
 export type RowQuality = 'OK' | 'WARNING' | 'ERROR';

@@ -1,347 +1,437 @@
 [
   {
     "group_type": "category",
-    "group_value": "NOT_STARTED",
-    "count": 675
+    "group_value": "WAITING",
+    "count": 1338
   },
   {
     "group_type": "category",
-    "group_value": "WAITING",
-    "count": 265
+    "group_value": "NOT_STARTED",
+    "count": 953
   },
   {
-    "group_type": "lot",
-    "group_value": "H031",
-    "count": 104
+    "group_type": "category",
+    "group_value": "EASY_WIN_APPROVE",
+    "count": 82
   },
   {
-    "group_type": "lot",
-    "group_value": "B003",
-    "count": 83
+    "group_type": "category",
+    "group_value": "CONFLICT",
+    "count": 18
   },
   {
-    "group_type": "lot",
-    "group_value": "B031",
-    "count": 72
+    "group_type": "category",
+    "group_value": "BLOCKED",
+    "count": 1
   },
   {
     "group_type": "lot",
     "group_value": "I003",
-    "count": 47
+    "count": 184
   },
   {
     "group_type": "lot",
-    "group_value": "A031",
-    "count": 45
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I031",
-    "count": 43
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H003",
-    "count": 33
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A003",
-    "count": 28
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H041",
-    "count": 28
+    "group_value": "B003",
+    "count": 130
   },
   {
     "group_type": "lot",
     "group_value": "I042",
-    "count": 26
+    "count": 127
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B031",
+    "count": 104
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I031",
+    "count": 102
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H031",
+    "count": 96
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A003",
+    "count": 86
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H003",
+    "count": 82
   },
   {
     "group_type": "lot",
     "group_value": "B041",
-    "count": 24
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A041",
-    "count": 24
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I018",
-    "count": 23
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A033",
-    "count": 22
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B12A",
-    "count": 22
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I043",
-    "count": 19
+    "count": 69
   },
   {
     "group_type": "lot",
     "group_value": "I041",
-    "count": 18
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B034",
-    "count": 16
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I019",
-    "count": 15
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B017",
-    "count": 14
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A006",
-    "count": 14
-  },
-  {
-    "group_type": "lot",
-    "group_value": "8",
-    "count": 14
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B16B",
-    "count": 13
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A12A",
-    "count": 13
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A005",
-    "count": 10
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H006",
-    "count": 9
-  },
-  {
-    "group_type": "lot",
-    "group_value": "G62",
-    "count": 9
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B011",
-    "count": 9
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H007",
-    "count": 9
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B033",
-    "count": 9
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B16A",
-    "count": 8
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B005",
-    "count": 8
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B42B",
-    "count": 8
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A008",
-    "count": 8
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A034",
-    "count": 8
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A007",
-    "count": 6
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B004",
-    "count": 6
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I012",
-    "count": 6
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H042",
-    "count": 5
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H051",
-    "count": 5
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B008",
-    "count": 5
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H008",
-    "count": 4
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A042",
-    "count": 4
-  },
-  {
-    "group_type": "lot",
-    "group_value": "G61",
-    "count": 4
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B019",
-    "count": 3
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H12A",
-    "count": 3
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B006",
-    "count": 3
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B013",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A004",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A022",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B03&",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B042",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I011",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H04",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H005",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B018",
-    "count": 2
-  },
-  {
-    "group_type": "lot",
-    "group_value": "6",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B11",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "I04",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B051",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H034",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "14",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "H004",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "B035",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "22",
-    "count": 1
-  },
-  {
-    "group_type": "lot",
-    "group_value": "A009",
-    "count": 1
+    "count": 64
   },
   {
     "group_type": "lot",
     "group_value": "H033",
+    "count": 60
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I043",
+    "count": 57
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A041",
+    "count": 56
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A031",
+    "count": 56
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H041",
+    "count": 55
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B034",
+    "count": 55
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A034",
+    "count": 49
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B008",
+    "count": 47
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H042",
+    "count": 44
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B012A",
+    "count": 41
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H008",
+    "count": 40
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A042",
+    "count": 36
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A008",
+    "count": 30
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B042",
+    "count": 29
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H034",
+    "count": 27
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A018",
+    "count": 26
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B12A",
+    "count": 25
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B011",
+    "count": 24
+  },
+  {
+    "group_type": "lot",
+    "group_value": "G062",
+    "count": 23
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A012A",
+    "count": 22
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H012A",
+    "count": 20
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H005",
+    "count": 19
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I034",
+    "count": 19
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A005",
+    "count": 19
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B006",
+    "count": 19
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I012",
+    "count": 18
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H007",
+    "count": 17
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B033",
+    "count": 17
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A007",
+    "count": 17
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I013A",
+    "count": 17
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B035",
+    "count": 16
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A033",
+    "count": 16
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B005",
+    "count": 15
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B004",
+    "count": 15
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B16B",
+    "count": 15
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I011",
+    "count": 14
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I018",
+    "count": 13
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B16A",
+    "count": 13
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B017",
+    "count": 13
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I002",
+    "count": 12
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I020",
+    "count": 12
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I001",
+    "count": 12
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A035",
+    "count": 11
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B018",
+    "count": 11
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B12B",
+    "count": 11
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I033",
+    "count": 11
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H035",
+    "count": 11
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A004",
+    "count": 10
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B42B",
+    "count": 10
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A006",
+    "count": 10
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I019",
+    "count": 8
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B013",
+    "count": 8
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B019",
+    "count": 8
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H004",
+    "count": 8
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I051",
+    "count": 6
+  },
+  {
+    "group_type": "lot",
+    "group_value": "G61",
+    "count": 6
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B051",
+    "count": 6
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I013B",
+    "count": 6
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A013",
+    "count": 6
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I035",
+    "count": 6
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A020",
+    "count": 5
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B020",
+    "count": 5
+  },
+  {
+    "group_type": "lot",
+    "group_value": "B06B",
+    "count": 4
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H006",
+    "count": 4
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H12A",
+    "count": 4
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H013",
+    "count": 3
+  },
+  {
+    "group_type": "lot",
+    "group_value": "A022",
+    "count": 3
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I16A",
+    "count": 3
+  },
+  {
+    "group_type": "lot",
+    "group_value": "G61A",
+    "count": 2
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I004",
+    "count": 2
+  },
+  {
+    "group_type": "lot",
+    "group_value": "H06B",
+    "count": 2
+  },
+  {
+    "group_type": "lot",
+    "group_value": "I00B",
     "count": 1
   },
   {
@@ -351,117 +441,72 @@
   },
   {
     "group_type": "lot",
-    "group_value": "B06B",
+    "group_value": "A012",
     "count": 1
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 03-GOE-LGD",
-    "count": 193
+    "group_type": "lot",
+    "group_value": "H012",
+    "count": 1
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 31 à 34-AU-HO-CFO-SNIE",
-    "count": 185
+    "group_type": "lot",
+    "group_value": "H051",
+    "count": 1
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 31 à 34-IN-BX-CFO-BENTIN",
-    "count": 139
+    "group_type": "lot",
+    "group_value": "B009",
+    "count": 1
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 41-CVC-AXIMA",
-    "count": 95
+    "group_type": "lot",
+    "group_value": "A12B",
+    "count": 1
   },
   {
-    "group_type": "sheet",
-    "group_value": "Lot 12-LAC-MEN",
-    "count": 65
+    "group_type": "lot",
+    "group_value": "H12B",
+    "count": 1
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 42-PLB-UTB",
-    "count": 36
+    "group_type": "lifecycle_state",
+    "group_value": "WAITING_RESPONSES",
+    "count": 1338
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 018-019-BX-SOLS DS-FRS",
-    "count": 25
+    "group_type": "lifecycle_state",
+    "group_value": "SYNTHESIS_ISSUED",
+    "count": 537
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT AH06-RVT FAC - FND ",
-    "count": 22
+    "group_type": "lifecycle_state",
+    "group_value": "NOT_STARTED",
+    "count": 405
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT B06-AH07-BFUP-CAS BA-LGD",
-    "count": 20
+    "group_type": "lifecycle_state",
+    "group_value": "READY_TO_ISSUE",
+    "count": 82
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 11 - 16A -AMP-CLD - FPL",
-    "count": 20
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 05-MEN EXT-ICM",
-    "count": 19
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 43-SPK-AAI",
-    "count": 19
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 020-PEINT PK-DBH",
+    "group_type": "lifecycle_state",
+    "group_value": "CONFLICT",
     "count": 18
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT B17-BX-FPR-BANGUI",
-    "count": 16
+    "group_type": "lifecycle_state",
+    "group_value": "FAST_REJECT",
+    "count": 9
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 04-06-ETANCH-COUV-SMAC",
-    "count": 13
+    "group_type": "lifecycle_state",
+    "group_value": "HM_EXCLUDED",
+    "count": 2
   },
   {
-    "group_type": "sheet",
-    "group_value": "LOT 6162-VRD-EV-SEPA",
-    "count": 13
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 16B-FP RAYON-LINDNER",
-    "count": 11
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 08-MUR-RID-DUV",
-    "count": 10
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 42b-VSQ-CREA",
-    "count": 8
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 51-ASC-SCHINDLER",
-    "count": 7
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT A22-SDB PREFA-HVA",
-    "count": 3
-  },
-  {
-    "group_type": "sheet",
-    "group_value": "LOT 14-PORTE-PK-FER",
-    "count": 3
+    "group_type": "lifecycle_state",
+    "group_value": "SAS_BLOCKED",
+    "count": 1
   }
 ]

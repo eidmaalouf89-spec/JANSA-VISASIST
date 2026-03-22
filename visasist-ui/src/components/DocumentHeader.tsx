@@ -26,7 +26,15 @@ function getLifecycleAccentColor(lc: LifecycleState): string {
       return 'var(--color-warning)';
     case 'NOT_STARTED':
     case 'EXCLUDED':
+    case 'SYNTHESIS_ISSUED':
       return 'var(--color-neutral)';
+    case 'CONFLICT':
+      return 'var(--color-arbitration)';
+    case 'SAS_BLOCKED':
+    case 'BLOCKED':
+      return 'var(--color-danger)';
+    case 'SAS_PENDING':
+      return 'var(--color-warning)';
   }
 }
 

@@ -1,3 +1,0 @@
-{
-    "_note": "M3 output is date-dependent. E2E tests validate structural invariants, not exact counts. This file is not used by tests."
-}
