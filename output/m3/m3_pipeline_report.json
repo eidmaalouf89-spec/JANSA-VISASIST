@@ -1,19 +1,20 @@
 {
   "module": "module_3",
-  "reference_date": "2026-03-19",
-  "input_rows": 6,
-  "pending_count": 3,
-  "excluded_count": 3,
+  "reference_date": "2026-03-21",
+  "input_rows": 4108,
+  "pending_count": 940,
+  "excluded_count": 3168,
   "excluded_by_reason": {
-    "NOT_LATEST": 2,
-    "VISA_HM": 1
+    "VISA_RESOLVED": 1690,
+    "NOT_LATEST": 1384,
+    "DUPLICATE": 4,
+    "VISA_HM": 90
   },
   "category_distribution": {
-    "BLOCKED": 1,
-    "EASY_WIN_APPROVE": 1,
-    "NOT_STARTED": 1
+    "NOT_STARTED": 675,
+    "WAITING": 265
   },
-  "overdue_count": 2,
-  "non_driving_status_warnings": 0,
-  "elapsed_seconds": 0.049
+  "overdue_count": 934,
+  "non_driving_status_warnings": 14,
+  "elapsed_seconds": 0.732
 }

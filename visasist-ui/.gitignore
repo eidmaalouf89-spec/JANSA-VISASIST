@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Backend output (copied into public/ for dev server)
+public/output/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

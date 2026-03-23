@@ -2,11 +2,12 @@ import { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useTranslation } from '../../i18n/use-translation';
 import type { TranslationKey } from '../../i18n/en';
-import { documentDetail } from '../../mock/document-detail';
-import { revisions } from '../../mock/revisions';
-import { anomalyLogs } from '../../mock/anomaly-logs';
+import { getDocument } from '../../data/document';
+import { DATA_MODE } from '../../data/config';
+import { revisions as mockRevisions } from '../../mock/revisions';
+import { anomalyLogs as mockAnomalyLogs } from '../../mock/anomaly-logs';
+import type { Document } from '../../types';
 import {
-  getDocumentByKey,
   getRevisionsForDocument,
   getAnomalyLogsForDocument,
   computeApproverCounts,
@@ -34,6 +35,22 @@ const TABS: TranslationKey[] = [
 
 type TabIndex = 0 | 1 | 2 | 3 | 4 | 5;
 
+// ─── Skeleton for loading state ─────────────────────────────────────
+
+function SkeletonHeader() {
+  return (
+    <div style={{ padding: 20 }}>
+      <div style={{ height: 20, width: 300, background: 'var(--bg-tertiary)', borderRadius: 4, marginBottom: 8 }} />
+      <div style={{ height: 14, width: 500, background: 'var(--bg-tertiary)', borderRadius: 4, marginBottom: 8 }} />
+      <div style={{ display: 'flex', gap: 8 }}>
+        {[80, 60, 100].map((w, i) => (
+          <div key={i} style={{ height: 22, width: w, background: 'var(--bg-tertiary)', borderRadius: 4 }} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function WorkspaceScreen() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -48,20 +65,45 @@ export default function WorkspaceScreen() {
     return [0, 1, 2, 3, 4, 5].includes(n) ? (n as TabIndex) : 0;
   });
 
-  // Derived — selector composition only
-  const doc = useMemo(
-    () =>
-      docVersionKey
-        ? getDocumentByKey([documentDetail], docVersionKey)
-        : undefined,
-    [docVersionKey],
-  );
+  // ── Data loading ──────────────────────────────────────────────────
+  const [doc, setDoc] = useState<Document | undefined>(undefined);
+  const [loading, setLoading] = useState(true);
+  const [integrationError, setIntegrationError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!docVersionKey) {
+      setLoading(false);
+      return;
+    }
+    let cancelled = false;
+    setLoading(true);
+    getDocument(docVersionKey)
+      .then((result) => {
+        if (!cancelled) {
+          setDoc(result);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          setLoading(false);
+          if (DATA_MODE === 'strict') setIntegrationError(String(err.message));
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [docVersionKey]);
+
+  // ── Derived — selector composition only ───────────────────────────
+  // HYBRID P3.5: revisions from mock — see document.ts for replacement condition
+  // HYBRID P3.5: anomaly logs from mock — see document.ts for replacement condition
   const docRevisions = useMemo(
-    () => (doc ? getRevisionsForDocument(revisions, doc) : []),
+    () => (doc ? getRevisionsForDocument(mockRevisions, doc) : []),
     [doc],
   );
   const docLogs = useMemo(
-    () => (doc ? getAnomalyLogsForDocument(anomalyLogs, doc) : []),
+    () => (doc ? getAnomalyLogsForDocument(mockAnomalyLogs, doc) : []),
     [doc],
   );
   const approverCounts = useMemo(
@@ -75,6 +117,39 @@ export default function WorkspaceScreen() {
     if (activeTab !== 0) params.tab = String(activeTab);
     setSearchParams(params, { replace: true });
   }, [activeTab, setSearchParams]);
+
+  // ── Integration error banner ──────────────────────────────────────
+  if (integrationError) {
+    return (
+      <div style={{ padding: 40 }}>
+        <div style={{
+          background: 'var(--color-danger)', color: '#fff',
+          padding: '12px 20px', fontSize: 12, fontWeight: 600, borderRadius: 4,
+        }}>
+          ⚠ Integration error: {integrationError} — set VITE_DATA_MODE=hybrid to use mock fallback
+        </div>
+      </div>
+    );
+  }
+
+  // ── Loading state ─────────────────────────────────────────────────
+  if (loading) {
+    return (
+      <div style={{ display: 'flex', height: '100%', overflow: 'hidden' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+          <SkeletonHeader />
+        </div>
+        <div
+          style={{
+            width: 290,
+            flexShrink: 0,
+            borderLeft: '1px solid var(--border-default)',
+            background: 'var(--bg-secondary)',
+          }}
+        />
+      </div>
+    );
+  }
 
   // Not-found state
   if (!doc) {

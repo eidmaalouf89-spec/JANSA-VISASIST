@@ -12,9 +12,10 @@ import {
   type QueueFilters,
   type QueueSort,
 } from '../../selectors/queue-selectors';
-import { queueItems } from '../../mock/queue-items';
+import { getQueueItems } from '../../data/queue';
+import { DATA_MODE } from '../../data/config';
 import { revisions } from '../../mock/revisions';
-import type { Category, ScoreBand } from '../../types';
+import type { QueueItem, Category, ScoreBand } from '../../types';
 import FilterPanel from '../../components/FilterPanel';
 import DataTable from '../../components/DataTable';
 import BulkActionBar from '../../components/BulkActionBar';
@@ -50,11 +51,57 @@ function parseSortFromUrl(params: URLSearchParams): QueueSort {
   return DEFAULT_QUEUE_SORT;
 }
 
+// ─── Skeleton rows for loading state ────────────────────────────────
+
+function SkeletonRows() {
+  return (
+    <div style={{ padding: '0 16px' }}>
+      {Array.from({ length: 10 }).map((_, i) => (
+        <div
+          key={i}
+          style={{
+            height: 44,
+            marginBottom: 2,
+            background: 'var(--bg-tertiary)',
+            borderRadius: 4,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 // ─── Component ──────────────────────────────────────────────────────
 
 export default function QueueScreen() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  // ── Data loading ──────────────────────────────────────────────────
+  const [items, setItems] = useState<QueueItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [integrationError, setIntegrationError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    getQueueItems()
+      .then((result) => {
+        if (!cancelled) {
+          setItems(result);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          setLoading(false);
+          if (DATA_MODE === 'strict') setIntegrationError(String(err.message));
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // ── Domain state — initialised from URL ─────────────────────────
   const [filters, setFilters] = useState<QueueFilters>(() => parseFiltersFromUrl(searchParams));
@@ -67,12 +114,12 @@ export default function QueueScreen() {
   });
 
   // ── Derived (never stored) ──────────────────────────────────────
-  const allItems = queueItems;
-  const availableLots = useMemo(() => getAvailableLots(allItems), []);
-  const availableApprovers = useMemo(() => getAvailableApprovers(allItems), []);
+  const allItems = items;
+  const availableLots = useMemo(() => getAvailableLots(allItems), [allItems]);
+  const availableApprovers = useMemo(() => getAvailableApprovers(allItems), [allItems]);
   const filteredSorted = useMemo(
     () => getFilteredSortedRows(allItems, filters, sort),
-    [filters, sort],
+    [allItems, filters, sort],
   );
   const selectedCount = getSelectedCount(selectedRows);
   const activeItem = activeRowId ? (getRowByKey(allItems, activeRowId) ?? null) : null;
@@ -184,6 +231,14 @@ export default function QueueScreen() {
         filteredCount={filteredSorted.length}
       />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        {integrationError && (
+          <div style={{
+            background: 'var(--color-danger)', color: '#fff',
+            padding: '12px 20px', fontSize: 12, fontWeight: 600,
+          }}>
+            ⚠ Integration error: {integrationError} — set VITE_DATA_MODE=hybrid to use mock fallback
+          </div>
+        )}
         {selectedCount > 0 && (
           <BulkActionBar
             selectedCount={selectedCount}
@@ -194,16 +249,20 @@ export default function QueueScreen() {
             onClear={() => setSelectedRows([])}
           />
         )}
-        <DataTable
-          rows={filteredSorted}
-          selectedRows={selectedRows}
-          activeRowId={activeRowId}
-          onRowClick={handleRowClick}
-          onCheckboxChange={handleCheckboxChange}
-          onSelectAll={handleSelectAll}
-          sortBy={sort}
-          onSort={handleSort}
-        />
+        {loading ? (
+          <SkeletonRows />
+        ) : (
+          <DataTable
+            rows={filteredSorted}
+            selectedRows={selectedRows}
+            activeRowId={activeRowId}
+            onRowClick={handleRowClick}
+            onCheckboxChange={handleCheckboxChange}
+            onSelectAll={handleSelectAll}
+            sortBy={sort}
+            onSort={handleSort}
+          />
+        )}
       </div>
       {activeItem && (
         <DetailPanel

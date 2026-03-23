@@ -1,6 +1,9 @@
 import type { DashboardSummary } from '../mock/dashboard-summary';
 import type { QueueItem, AnomalyLog, AISuggestion } from '../types';
 import type { PipelineRunHistoryPoint } from '../mock/pipeline-runs-history';
+import { DATA_MODE, IntegrationError } from './config';
+import { getQueueItems } from './queue';
+import { adaptM3SummaryToDashboard } from './adapters/dashboard-adapter';
 
 // Re-export types for consumers
 export type { DashboardSummary } from '../mock/dashboard-summary';
@@ -22,11 +25,71 @@ export interface DashboardData {
 
 /**
  * Fetch all data required by the Dashboard screen.
- * Currently resolves mock data. Replace internals with API calls later.
+ * In mock mode: resolves mock data.
+ * In hybrid/strict mode: fetches real M3 outputs and composes dashboard.
  */
 export async function getDashboardData(): Promise<DashboardData> {
-  // Dynamic import keeps the mock boundary clear.
-  // When the API is ready, replace these with fetch() calls.
+  // ── Mock mode — full mock pipeline ────────────────────────────────
+  if (DATA_MODE === 'mock') {
+    return getMockDashboard();
+  }
+
+  // ── Hybrid/Strict mode — fetch real data ──────────────────────────
+  try {
+    const [categorySummaryRes, pipelineReportRes, queueItems] = await Promise.all([
+      fetch('/output/m3/m3_category_summary.json'),
+      fetch('/output/m3/m3_pipeline_report.json'),
+      getQueueItems(),
+    ]);
+
+    if (!categorySummaryRes.ok || !pipelineReportRes.ok) {
+      throw new Error(
+        `HTTP error: category=${categorySummaryRes.status}, pipeline=${pipelineReportRes.status}`,
+      );
+    }
+
+    const categorySummary = await categorySummaryRes.json();
+    const pipelineReport = await pipelineReportRes.json();
+
+    const summary = adaptM3SummaryToDashboard(categorySummary, pipelineReport, queueItems);
+
+    // Urgent items: first 5 of already-sorted queue (M3 sorted by priority_score desc)
+    const urgentItems = queueItems.slice(0, 5);
+
+    // HYBRID P3.5: anomaly logs from mock — replace when import_log.json is populated
+    const { anomalyLogs } = await import('../mock/anomaly-logs');
+    const recentAnomalies = anomalyLogs.slice(0, 5);
+
+    // Recommendations: mock (M5 out of scope)
+    const { aiSuggestion, aiSuggestionFallback } = await import('../mock/ai-suggestion');
+    const recommendations = [aiSuggestion, aiSuggestion, aiSuggestionFallback];
+
+    // Trend history: mock (no multi-run history yet)
+    const { pipelineRunsHistory } = await import('../mock/pipeline-runs-history');
+
+    return {
+      summary,
+      urgentItems,
+      recentAnomalies,
+      recommendations,
+      recommendationFallback: aiSuggestionFallback,
+      trendHistory: pipelineRunsHistory,
+    };
+  } catch (err) {
+    if (DATA_MODE === 'hybrid') {
+      console.warn('[VISASIST:schema] dashboard fetch failed, falling back to mock:', err);
+      return getMockDashboard();
+    }
+    throw new IntegrationError(
+      `Failed to fetch dashboard data: ${err}`,
+      'dashboard',
+    );
+  }
+}
+
+// ─── Internal mock loader ───────────────────────────────────────────
+
+async function getMockDashboard(): Promise<DashboardData> {
   const [
     { dashboardSummary },
     { queueItems },
